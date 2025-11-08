@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Values.configMapName }}
+  namespace: {{ .Release.Namespace }}
+data:
+  SPRING_PROFILES_ACTIVE: "prod"
+
+  # Service URLs (Internal DNS)
+  AUTH_SERVICE_URL: "http://auth-service.hrd-portal.svc.cluster.local:8081"
+  CLASSROOM_SERVICE_URL: "http://classroom-service.hrd-portal.svc.cluster.local:8082"
+  USER_SERVICE_URL: "http://user-management-service.hrd-portal.svc.cluster.local:8083"
+
+  # External Config / Discovery
+  EUREKA_CLIENT_REGISTER_WITH_EUREKA: "false"
+  EUREKA_CLIENT_FETCH_REGISTRY: "false"
+
+  SPRING_CONFIG_IMPORT: "configserver:http://128.199.251.237:8888"

@@ -1,0 +1,13 @@
+replicaCount: 1
+
+image:
+  repository: "pinkmelon/api-gateway-hrd"
+  tag: "10"
+
+service:
+  type: LoadBalancer
+  port: 9100
+
+revisionHistoryLimit: 3
+
+configMapName: api-gateway-config
