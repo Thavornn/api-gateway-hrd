@@ -15,4 +15,8 @@ data:
   EUREKA_CLIENT_REGISTER_WITH_EUREKA: "false"
   EUREKA_CLIENT_FETCH_REGISTRY: "false"
 
+  TASK_SERVICE_URL: "http://task-service.hrd-portal.svc.cluster.local:8084"
+  RESOURCE_SERVICE_URL: "http://resource-service.hrd-portal.svc.cluster.local:8081"
+  PORTAL_SERVICE_URL: "http://portal-service.hrd-portal.svc.cluster.local:8089"
+
   SPRING_CONFIG_IMPORT: "configserver:http://128.199.251.237:8888"
