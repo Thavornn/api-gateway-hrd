@@ -10,13 +10,12 @@ data:
   AUTH_SERVICE_URL: "http://auth-service.hrd-portal.svc.cluster.local:8081"
   CLASSROOM_SERVICE_URL: "http://classroom-service.hrd-portal.svc.cluster.local:8082"
   USER_SERVICE_URL: "http://user-management-service.hrd-portal.svc.cluster.local:8083"
+  TASK_SERVICE_URL: "http://task-service.task-service.svc.cluster.local:8084"
+  RESOURCE_SERVICE_URL: "http://resource-service.resource-service.svc.cluster.local:8081"
+  PORTAL_SERVICE_URL: "http://portal-service.hrd-portal.svc.cluster.local:8089"
 
   # External Config / Discovery
   EUREKA_CLIENT_REGISTER_WITH_EUREKA: "false"
   EUREKA_CLIENT_FETCH_REGISTRY: "false"
-
-  TASK_SERVICE_URL: "http://task-service.hrd-portal.svc.cluster.local:8084"
-  RESOURCE_SERVICE_URL: "http://resource-service.hrd-portal.svc.cluster.local:8081"
-  PORTAL_SERVICE_URL: "http://portal-service.hrd-portal.svc.cluster.local:8089"
 
   SPRING_CONFIG_IMPORT: "configserver:http://128.199.251.237:8888"
