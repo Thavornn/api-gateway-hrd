@@ -6,7 +6,8 @@ image:
 
 service:
   type: LoadBalancer
-  port: 9100
+  port: 80 # Service port exposed to Ingress
+  targetPort: 9100 # Pod/container port
 
 revisionHistoryLimit: 3
 
