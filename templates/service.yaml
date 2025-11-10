@@ -5,9 +5,9 @@ metadata:
   labels:
     app: "{{ .Chart.Name }}"
 spec:
-  type: { { .Values.service.type } }
+  type: {{ .Values.service.type }}
   selector:
     app: "{{ .Chart.Name }}"
   ports:
-    - port: { { .Values.service.port } } # Service port (exposed to Ingress)
-      targetPort: { { .Values.service.targetPort } } # Container port (9100)
+    - port: {{ .Values.service.port }} # Service port (exposed to Ingress)
+      targetPort: {{ .Values.service.targetPort }} # Container port (9100)
