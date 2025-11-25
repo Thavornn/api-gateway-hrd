@@ -10,13 +10,19 @@ metadata:
     nginx.ingress.kubernetes.io/proxy-body-size: "50m"
     nginx.ingress.kubernetes.io/proxy-read-timeout: "3600"
     nginx.ingress.kubernetes.io/proxy-send-timeout: "3600"
-
 spec:
   ingressClassName: nginx
   rules:
     - host: gate-way.hrdportal.systems
       http:
         paths:
+          - path: /ws
+            pathType: Prefix
+            backend:
+              service:
+                name: {{ .Chart.Name }}
+                port:
+                  number: {{ .Values.service.port }}
           - path: /
             pathType: Prefix
             backend:
@@ -24,7 +30,6 @@ spec:
                 name: {{ .Chart.Name }}
                 port:
                   number: {{ .Values.service.port }}
-
   tls:
     - hosts:
         - gate-way.hrdportal.systems
